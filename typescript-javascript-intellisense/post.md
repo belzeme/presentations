@@ -94,7 +94,24 @@ In JavaScript, most of the time there is no explicit type information available.
 
 For a variable or property, the type is typically the type of the value used to initialize it or the most recent value assignment.
 
-```js
-let nexItem = 10;
-nextItem;
-```
+![image](https://github.com/belzeme/presentations/raw/master/typescript-javascript-intellisense/ressources/type-inference.gif)
+
+For a function the return type can be inferred from the return statements.
+
+For function parameters, there is currently no inference, but there are ways to work around this using JSDoc or TypeScript **.d.ts** files (see later sections).
+
+### IntelliSense based on JSDoc
+
+Where type inference does not provide the desired type information (or to support documentation, and we like documentation), type information may be provided expicitly via JSDoc annotations. For example, to give a partially declared object a specific type, you can use the **@type** tag a shown below:
+
+![image](https://github.com/belzeme/presentations/raw/master/typescript-javascript-intellisense/ressources/jsdoc-inference.gif)
+
+As mentionned, function parameters are never inferred. However, using the JSDoc **@param** tag you can add types to function parameters as well.
+
+![image](https://github.com/belzeme/presentations/raw/master/typescript-javascript-intellisense/ressources/jsdoc-inference-function.gif)
+
+### IntelliSense based on TypeScript Declaration Files
+
+Because JavaScript and TypeScript are based on the same language service, they are able to interact. For example, JavaScript IntelliSense can be provided for values declared in a **.d.ts** file [more info](https://github.com/Microsoft/TypeScript-Handbook/blob/master/pages/declaration%20files/Introduction.md), and types sush as interfaces and classes declared in TypeScript are available for use as types in JSDoc comments.
+
+![image](https://github.com/belzeme/presentations/raw/master/typescript-javascript-intellisense/ressources/ts-inference.gif)
