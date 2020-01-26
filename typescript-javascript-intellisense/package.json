@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "node slide-deck/slideshow.js"
+  },
+  "dependencies": {
+    "@marp-team/marpit": "^1.5.0"
+  }
+}
